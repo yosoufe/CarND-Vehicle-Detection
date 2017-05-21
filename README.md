@@ -85,7 +85,7 @@ with_hog_feat = True
    
    At the end I am saving the classifier and the normalizer into pickle files for further uses.
 
-## Searching for cars on the image:
+## 2. Searching for cars on the image:
 I started by creatiung single scale sliding windows and then developed that one on different scales. At the beggining I used the following windows to search on the image:
 
 ![alt text][image6]
@@ -105,7 +105,7 @@ The above picture demonstrates of the detection of cars. As you can see although
 ### Heatmap:
 Creating a heatmap means, initialize a map (array) with the same size of the image, Increase the value of each pixel by one if they are in a window and do this check for all detected windows. 
 
-## Final Result:
+## 3. Final Result:
 You can find the resulting video [here](https://youtu.be/LlQv3c4PjVg)
 
 The function `detect_cars` is analysing the video.
