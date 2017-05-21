@@ -42,7 +42,22 @@ In order to start this project, first step, a classifier is needed to discrimina
 
    Next step is to extract features from the images. There different set of features used for this project. First of all is raw color values of the image in RGB in 32 x 32 pixels which is called here `bin_spatial`, then histogram of the colors which is called `color_hist` and finally the HOG (or Histogram of Oriented Gradients).
    
-   HOG is calculated using `get_hog_features` functions and it can be applied to different color spaces. I found using all three channels of HLS color space is more robust and would result in less false positive detections. The following image is a sample of features of both groups.
+   HOG is calculated using `get_hog_features` functions and it can be applied to different color spaces. I found using all three channels of HLS color space is more robust and would result in less false positive detections. All the key tuning parameters are set in this part of the code:
+   
+```
+cspace='HLS'
+sp_size = (32, 32)
+hist_bins = 32
+hist_orient_bin = 9
+pixelPerCell = 8
+cellPerBlock = 2
+hogChannel = 'ALL'
+with_spatial_feat = True
+with_hist_feature = True
+with_hog_feat = True
+```
+
+   The following image is a sample of features of both groups.
    
    ![alt text][image2]
    
