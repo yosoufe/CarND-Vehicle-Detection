@@ -115,3 +115,10 @@ The heatmap is thresholded to keep pixels with value larger than 1.
 ### Here is the final detection
 
 ![alt text][image11]
+
+### Discussion:
+The sliding window on normal CPU is very slow. I guess if any library was availble to test each window on a single thread of a GPU it could be much more faster. Unfortunately I could not find simple solution to do that. There are also single shot detection method availble which may be using CNNs.
+
+Finding a threshold to detect the cars which are further away and avoiding false positives was quite difficult task but accumulating the heatmap over few last frames could help a lot.
+
+I used the half right side of the image to detect cars, because it was too slow to search all of the video. This will cause a big problem when the car does not drive on the left side of the road. and there are some cars on left side. To speeding up the algorithm, I guess a lot of optimisation can be done and also the nature of the python language only on CPU is quite slow. Maybe using C/C++ and more efficient programming as well as GPU capabilities can speed up the program.
